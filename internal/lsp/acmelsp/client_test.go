@@ -12,10 +12,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/fhs/acme-lsp/internal/lsp"
-	"github.com/fhs/acme-lsp/internal/lsp/acmelsp/config"
-	"github.com/fhs/acme-lsp/internal/lsp/protocol"
-	"github.com/fhs/acme-lsp/internal/lsp/text"
+	"github.com/tw4452852/acme-lsp/internal/lsp"
+	"github.com/tw4452852/acme-lsp/internal/lsp/acmelsp/config"
+	"github.com/tw4452852/acme-lsp/internal/lsp/protocol"
+	"github.com/tw4452852/acme-lsp/internal/lsp/text"
 )
 
 const goSource = `package main // import "example.com/test"

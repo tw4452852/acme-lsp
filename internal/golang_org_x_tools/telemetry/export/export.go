@@ -13,7 +13,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/telemetry"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/telemetry"
 )
 
 type Exporter interface {

@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/jsonrpc2"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/jsonrpc2"
 )
 
 var logRPC = flag.Bool("logrpc", false, "Enable jsonrpc2 communication logging")

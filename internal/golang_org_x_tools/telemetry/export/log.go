@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/telemetry"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/telemetry"
 )
 
 // LogWriter returns an observer that logs events to the supplied writer.

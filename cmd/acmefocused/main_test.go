@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/fhs/acme-lsp/internal/p9service"
+	"github.com/tw4452852/acme-lsp/internal/p9service"
 )
 
 const testWinID = "42"
