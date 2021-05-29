@@ -102,8 +102,28 @@ func (rc *RemoteCmd) Completion(ctx context.Context, edit bool) error {
 	if len(result.Items) == 0 {
 		fmt.Fprintf(rc.Stderr, "no completion\n")
 	}
+	var selection string
 	for _, item := range result.Items {
-		fmt.Fprintf(rc.Stdout, "%v %v\n", item.Label, item.Detail)
+		te := item.TextEdit
+		if te == nil {
+			continue
+		}
+		sl, sc, el, ec := int(te.Range.Start.Line), int(te.Range.Start.Character), int(te.Range.End.Line), int(te.Range.End.Character)
+		if selection == "" {
+			var buf = make([]byte, ec - sc)
+			_, err := w.ReadAt(sl, sc, el, ec, buf);
+			if err != nil {
+				continue
+			}
+			selection = string(buf)
+		}
+
+		candidate := te.NewText
+
+		if selection != "" && strings.HasPrefix(strings.ToLower(candidate), strings.ToLower(selection)) {
+			fmt.Fprintf(rc.Stdout, "%q, type: %d\n%d+#%d,%d+#%dc/%s\n",
+				candidate, item.Kind, sl, sc, el, ec, candidate)
+		}
 	}
 	return nil
 }
