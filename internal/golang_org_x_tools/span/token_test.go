@@ -9,7 +9,7 @@ import (
 	"go/token"
 	"testing"
 
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/span"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/span"
 )
 
 var testdata = []struct {

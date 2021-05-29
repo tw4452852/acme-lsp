@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/fhs/acme-lsp/internal/acmeutil"
-	"github.com/fhs/acme-lsp/internal/lsp"
-	"github.com/fhs/acme-lsp/internal/lsp/protocol"
+	"github.com/tw4452852/acme-lsp/internal/acmeutil"
+	"github.com/tw4452852/acme-lsp/internal/lsp"
+	"github.com/tw4452852/acme-lsp/internal/lsp/protocol"
 )
 
 // diagWin implements client.DiagnosticsWriter.

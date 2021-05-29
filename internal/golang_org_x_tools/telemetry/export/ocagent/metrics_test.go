@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/telemetry"
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/telemetry/export/ocagent/wire"
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/telemetry/metric"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/telemetry"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/telemetry/export/ocagent/wire"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/telemetry/metric"
 )
 
 func TestDataToMetricDescriptor(t *testing.T) {

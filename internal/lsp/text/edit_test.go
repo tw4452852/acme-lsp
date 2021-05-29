@@ -4,7 +4,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/fhs/acme-lsp/internal/lsp/protocol"
+	"github.com/tw4452852/acme-lsp/internal/lsp/protocol"
 )
 
 func TestURI(t *testing.T) {
