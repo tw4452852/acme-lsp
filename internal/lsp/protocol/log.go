@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/jsonrpc2"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/jsonrpc2"
 )
 
 type loggingStream struct {

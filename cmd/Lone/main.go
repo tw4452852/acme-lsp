@@ -7,9 +7,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/fhs/acme-lsp/internal/lsp/acmelsp"
-	"github.com/fhs/acme-lsp/internal/lsp/acmelsp/config"
-	"github.com/fhs/acme-lsp/internal/lsp/cmd"
+	"github.com/tw4452852/acme-lsp/internal/lsp/acmelsp"
+	"github.com/tw4452852/acme-lsp/internal/lsp/acmelsp/config"
+	"github.com/tw4452852/acme-lsp/internal/lsp/cmd"
 )
 
 //go:generate ../../scripts/mkdocs.sh
