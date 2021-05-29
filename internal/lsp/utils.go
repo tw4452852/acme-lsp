@@ -7,8 +7,8 @@ import (
 	"log"
 	"path/filepath"
 
-	"github.com/fhs/acme-lsp/internal/lsp/protocol"
-	"github.com/fhs/acme-lsp/internal/lsp/text"
+	"github.com/tw4452852/acme-lsp/internal/lsp/protocol"
+	"github.com/tw4452852/acme-lsp/internal/lsp/text"
 )
 
 func ServerProvidesCodeAction(cap *protocol.ServerCapabilities, kind protocol.CodeActionKind) bool {

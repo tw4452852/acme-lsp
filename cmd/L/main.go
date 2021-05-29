@@ -13,13 +13,13 @@ import (
 	"strconv"
 
 	p9client "github.com/fhs/9fans-go/plan9/client"
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/jsonrpc2"
-	"github.com/fhs/acme-lsp/internal/lsp"
-	"github.com/fhs/acme-lsp/internal/lsp/acmelsp"
-	"github.com/fhs/acme-lsp/internal/lsp/acmelsp/config"
-	"github.com/fhs/acme-lsp/internal/lsp/cmd"
-	"github.com/fhs/acme-lsp/internal/lsp/protocol"
-	"github.com/fhs/acme-lsp/internal/lsp/proxy"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/jsonrpc2"
+	"github.com/tw4452852/acme-lsp/internal/lsp"
+	"github.com/tw4452852/acme-lsp/internal/lsp/acmelsp"
+	"github.com/tw4452852/acme-lsp/internal/lsp/acmelsp/config"
+	"github.com/tw4452852/acme-lsp/internal/lsp/cmd"
+	"github.com/tw4452852/acme-lsp/internal/lsp/protocol"
+	"github.com/tw4452852/acme-lsp/internal/lsp/proxy"
 )
 
 //go:generate ../../scripts/mkdocs.sh
@@ -34,7 +34,7 @@ LSP commands.
 
 If L is run outside of acme (therefore $winid is not set), L will
 attempt to find the focused window ID by connecting to acmefocused
-(https://godoc.org/github.com/fhs/acme-lsp/cmd/acmefocused).
+(https://godoc.org/github.com/tw4452852/acme-lsp/cmd/acmefocused).
 
 	Usage: L <sub-command> [args...]
 

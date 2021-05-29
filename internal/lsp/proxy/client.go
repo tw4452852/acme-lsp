@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/jsonrpc2"
-	"github.com/fhs/acme-lsp/internal/lsp/protocol"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/jsonrpc2"
+	"github.com/tw4452852/acme-lsp/internal/lsp/protocol"
 )
 
 const Debug = false

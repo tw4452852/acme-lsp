@@ -7,7 +7,7 @@ package export
 import (
 	"context"
 
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/telemetry"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/telemetry"
 )
 
 // Multi returns an exporter that invokes all the exporters given to it in order.

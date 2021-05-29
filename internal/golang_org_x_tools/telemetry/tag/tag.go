@@ -11,8 +11,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/telemetry"
-	"github.com/fhs/acme-lsp/internal/golang_org_x_tools/telemetry/export"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/telemetry"
+	"github.com/tw4452852/acme-lsp/internal/golang_org_x_tools/telemetry/export"
 )
 
 //TODO: Do we need to do something more efficient than just store tags
