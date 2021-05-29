@@ -89,6 +89,14 @@ func (w *Win) WriteAt(q0, q1 int, b []byte) (int, error) {
 	return w.Write("data", b)
 }
 
+func (w *Win) ReadAt(sl, sc, el, ec int, b []byte) (int, error) {
+	err := w.Addr("%d+#%d,%d+#%d", sl, sc, el, ec);
+	if err != nil {
+		return 0, fmt.Errorf("failed to write to addr for winid=%v: %v", w.ID(), err)
+	}
+	return w.Read("data", b)
+}
+
 // Mark implements text.File.
 func (w *Win) Mark() error {
 	return w.Ctl("mark")
