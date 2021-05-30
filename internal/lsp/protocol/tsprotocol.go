@@ -1665,7 +1665,7 @@ type CompletionClientCapabilities struct {
 	 * The client supports the following `CompletionItem` specific
 	 * capabilities.
 	 */
-	CompletionItem *struct {
+	CompletionItem struct {
 
 		/*SnippetSupport defined:
 		 * Client supports snippets as insert text.
