@@ -71,6 +71,16 @@ func (rc *RemoteCmd) DidChange(ctx context.Context) error {
 	})
 }
 
+func generateEditCmd(te protocol.TextEdit) string {
+	return fmt.Sprintf("%d+#%d,%d+#%dc/%s",
+			int(te.Range.Start.Line),
+			int(te.Range.Start.Character),
+			int(te.Range.End.Line),
+			int(te.Range.End.Character),
+			strings.ReplaceAll(te.NewText, "\n", "\\n"),
+	)
+}
+
 func (rc *RemoteCmd) Completion(ctx context.Context, edit bool) error {
 	w, err := acmeutil.OpenWin(rc.winid)
 	if err != nil {
@@ -118,11 +128,17 @@ func (rc *RemoteCmd) Completion(ctx context.Context, edit bool) error {
 			selection = string(buf)
 		}
 
-		candidate := te.NewText
+		filter := te.NewText
+		if item.InsertTextFormat == 2 {
+			filter = item.FilterText
+		}
 
-		if selection != "" && strings.HasPrefix(strings.ToLower(candidate), strings.ToLower(selection)) {
-			fmt.Fprintf(rc.Stdout, "%q, type: %d\n%d+#%d,%d+#%dc/%s\n",
-				candidate, item.Kind, sl, sc, el, ec, candidate)
+		if selection != "" && strings.HasPrefix(strings.ToLower(filter), strings.ToLower(selection)) {
+			fmt.Fprintf(rc.Stdout, "%q, type: %d\n", item.Label, item.Kind)
+			for _, ate := range item.AdditionalTextEdits {
+				fmt.Fprintf(rc.Stdout, "%s\n", generateEditCmd(ate))
+			}
+			fmt.Fprintf(rc.Stdout, "%s\n", generateEditCmd(*te))
 		}
 	}
 	return nil
