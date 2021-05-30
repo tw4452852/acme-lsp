@@ -151,6 +151,7 @@ func (c *Client) init(conn net.Conn, cfg *ClientConfig) error {
 				DocumentSymbol: &protocol.DocumentSymbolClientCapabilities{
 					HierarchicalDocumentSymbolSupport: true,
 				},
+				Completion: &protocol.CompletionClientCapabilities{},
 			},
 		},
 		WorkspaceFolders:      cfg.Workspaces,
@@ -160,6 +161,7 @@ func (c *Client) init(conn net.Conn, cfg *ClientConfig) error {
 	params.Capabilities.Workspace.ApplyEdit = true
 	params.Capabilities.TextDocument.CodeAction.CodeActionLiteralSupport.CodeActionKind.ValueSet =
 		[]protocol.CodeActionKind{protocol.SourceOrganizeImports}
+	params.Capabilities.TextDocument.Completion.CompletionItem.SnippetSupport = true
 
 	var result protocol.InitializeResult
 	if err := rpc.Call(ctx, "initialize", params, &result); err != nil {
