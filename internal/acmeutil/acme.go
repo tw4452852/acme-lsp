@@ -53,6 +53,10 @@ func (w *Win) Filename() (string, error) {
 
 // CurrentAddr returns the address of current selection.
 func (w *Win) CurrentAddr() (q0, q1 int, err error) {
+	if q0, err = strconv.Atoi(os.Getenv("acme_pos0")); err == nil {
+		return q0, q0, nil
+	}
+
 	_, _, err = w.ReadAddr() // open addr file
 	if err != nil {
 		return 0, 0, fmt.Errorf("read addr: %v", err)
@@ -90,7 +94,7 @@ func (w *Win) WriteAt(q0, q1 int, b []byte) (int, error) {
 }
 
 func (w *Win) ReadAt(sl, sc, el, ec int, b []byte) (int, error) {
-	err := w.Addr("%d+#%d,%d+#%d", sl, sc, el, ec);
+	err := w.Addr("%d+#%d,%d+#%d", sl, sc, el, ec)
 	if err != nil {
 		return 0, fmt.Errorf("failed to write to addr for winid=%v: %v", w.ID(), err)
 	}
