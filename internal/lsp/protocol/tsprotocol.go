@@ -1048,7 +1048,7 @@ type ServerCapabilities struct {
 	/*ColorProvider defined:
 	 * The server provides color provider support.
 	 */
-	ColorProvider bool `json:"colorProvider,omitempty"` // boolean | DocumentColorOptions | DocumentColorRegistrationOptions
+	ColorProvider interface{} `json:"colorProvider,omitempty"` // boolean | DocumentColorOptions | DocumentColorRegistrationOptions
 
 	/*WorkspaceSymbolProvider defined:
 	 * The server provides workspace symbol support.
